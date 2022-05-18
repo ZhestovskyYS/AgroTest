@@ -1,0 +1,113 @@
+def versions = [
+        kotlin             : "1.6.20",
+        coroutines         : "1.5.2",
+        material           : "1.5.0",
+        dagger2            : "2.41",
+        viewPager2         : "1.0.0",
+        activityKtx        : "1.3.0",
+        fragmentKtx        : "1.4.1",
+        appCompat          : "1.4.1",
+        adapterDelegates4  : "4.3.0",
+        androidxCore       : "1.7.0",
+        viewBinding        : "1.4.6",
+        constraintLayout   : "2.1.3",
+        swipeRefreshLayout : "1.1.0",
+        recyclerView       : "1.2.1",
+        leakCanary         : "2.8.1",
+        googleServices     : "4.3.8",
+        dataStore          : "1.0.0",
+        inputMask          : "6.1.0",
+        jUnit              : "4.13.2",
+        jUnitExt           : "1.1.3",
+        jodaTime           : "2.9.9",
+        espresso           : "3.4.0",
+        splashScreen       : "1.0.0-beta02",
+        androidGradlePlugin: "7.0.3",
+        devGradlePlugin    : "1.6.7",
+        crashlyticsPlugin  : '2.8.1'
+]
+
+ext {
+    kotlinVersions = versions.kotlin
+    devGradlePluginVersion = versions.devGradlePlugin
+}
+
+ext.plugs = [
+        gradle        : "com.android.tools.build:gradle:${versions.androidGradlePlugin}",
+        googleServices: "com.google.gms:google-services:${versions.googleServices}",
+        kotlin        : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+        ktlint        : "org.jlleitschuh.gradle:ktlint-gradle:10.1.0"
+]
+
+def kotlin = [
+        stdLibJdk8: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+        coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+]
+
+def ui = [
+        material                   : "com.google.android.material:material:${versions.material}",
+        adapterDelegates4          : "com.hannesdorfmann:adapterdelegates4:${versions.adapterDelegates4}",
+        adapterDelegates4Dsl       : "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${versions.adapterDelegates4}",
+        adapterDelegates4DslBinding: "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${versions.adapterDelegates4}",
+        inputMask                  : "com.github.RedMadRobot:input-mask-android:${versions.inputMask}",
+        splashScreen               : "androidx.core:core-splashscreen:${versions.splashScreen}"
+]
+
+def dagger = [
+        core       : "com.google.dagger:dagger:${versions.dagger2}",
+        android    : "com.google.dagger:dagger-android-support:${versions.dagger2}",
+        coreKapt   : "com.google.dagger:dagger-compiler:${versions.dagger2}",
+        androidKapt: "com.google.dagger:dagger-android-processor:${versions.dagger2}"
+]
+
+def androidx = [
+        viewPager2        : "androidx.viewpager2:viewpager2:${versions.viewPager2}",
+        recyclerView      : "androidx.recyclerview:recyclerview:${versions.recyclerView}",
+        swipeRefreshLayout: "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipeRefreshLayout}",
+        activityKtx       : "androidx.activity:activity-ktx:${versions.activityKtx}",
+        fragmentKtx       : "androidx.fragment:fragment-ktx:${versions.fragmentKtx}",
+        core              : "androidx.core:core-ktx:${versions.androidxCore}",
+        constraintLayout  : "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}",
+        appCompat         : "androidx.appcompat:appcompat:${versions.appCompat}",
+        dataStore         : "androidx.datastore:datastore-preferences:${versions.dataStore}"
+]
+
+def system = [
+        jodaTime                  : "joda-time:joda-time:${versions.jodaTime}",
+        viewBinding               : "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${versions.viewBinding}",
+        keyboardVisibilityListener: "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.2.0"
+]
+
+def navigation = [
+        cicerone: "com.github.terrakok:cicerone:7.1"
+]
+
+def debug = [
+        leakCanary: "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}"
+]
+
+def test = [
+        jUnit        : "junit:junit:${versions.jUnit}",
+        jUnitExt     : "androidx.test.ext:junit:${versions.jUnitExt}",
+        espresso     : "androidx.test.espresso:espresso-core:${versions.espresso}",
+        mockito      : "org.mockito:mockito-core:4.2.0",
+        strikt       : "io.strikt:strikt-core:0.33.0",
+        benas        : "io.github.benas:random-beans:3.7.0",
+        robolectric  : "org.robolectric:robolectric:4.7.3",
+        json         : "org.json:json:20211205",
+        coroutines   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0",
+        turbine      : "app.cash.turbine:turbine:0.7.0",
+        arch         : "androidx.arch.core:core-testing:2.1.0",
+        mockitoInline: "org.mockito:mockito-inline:2.13.0"
+]
+
+ext.deps = [
+        "kotlin"    : kotlin,
+        "ui"        : ui,
+        "dagger"    : dagger,
+        "androidx"  : androidx,
+        "system"    : system,
+        "navigation": navigation,
+        "debug"     : debug,
+        "test"      : test
+]

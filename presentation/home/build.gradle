@@ -9,15 +9,10 @@ dependencies {
 
     implementation deps.androidx.core
     implementation deps.androidx.appCompat
+    implementation deps.ui.material
 
     //Test
     testImplementation deps.test.jUnit
     androidTestImplementation deps.test.jUnitExt
     androidTestImplementation deps.test.espresso
-
-    //Dagger
-    kapt deps.dagger.coreKapt
-    implementation deps.dagger.core
-    kapt deps.dagger.androidKapt
-    implementation deps.dagger.androidKapt
 }

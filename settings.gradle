@@ -5,6 +5,15 @@ pluginManagement {
         mavenCentral()
     }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 rootProject.name = "AgroTest"
 include ':app'
 include ':network'
@@ -13,3 +22,5 @@ include ':repository'
 include ':entity'
 include ':core'
 include ':navigation'
+include ':presentation'
+include ':presentation:home'
