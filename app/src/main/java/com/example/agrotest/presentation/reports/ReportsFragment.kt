@@ -42,7 +42,7 @@ class ReportsFragment : DaggerFragment(R.layout.fragment_reports) {
     private fun bindTabBar() {
         binding.tabbarView.apply {
             title.text = getString(R.string.reports)
-            backArrow.apply {
+            backArrowLayout.apply {
                 isVisible = true
                 setOnClickListener {
                     viewModel.navigateBack()
