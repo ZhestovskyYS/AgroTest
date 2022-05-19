@@ -3,6 +3,8 @@ package com.example.agrotest.presentation.main
 import androidx.lifecycle.ViewModel
 import com.example.agrotest.presentation.home.HomeFragment
 import com.example.agrotest.presentation.home.HomeModule
+import com.example.agrotest.presentation.reports.ReportsFragment
+import com.example.agrotest.presentation.reports.ReportsModule
 import com.example.agrotest.presentation.weights.WeightsFragment
 import com.example.agrotest.presentation.weights.WeightsModule
 import com.example.agrotest.presentation.weights.WeightsViewModel
@@ -25,4 +27,7 @@ interface MainActivityModule {
 
     @ContributesAndroidInjector(modules = [WeightsModule::class])
     fun contributeToWeightsScreen(): WeightsFragment
+
+    @ContributesAndroidInjector(modules = [ReportsModule::class])
+    fun contributeToReportsScreen(): ReportsFragment
 }
