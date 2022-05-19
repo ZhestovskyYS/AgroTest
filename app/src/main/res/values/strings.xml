@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AgroTest</string>
+    <string name="current_weight">Текущий вес</string>
+    <string name="previous_weight">Предыдущий вес</string>
+    <string name="delta_weight">Привес</string>
+    <string name="animal">Особь</string>
+    <string name="reports">Отчеты</string>
 </resources>
