@@ -1,4 +1,4 @@
-package com.example.navigation
+package com.example.agrotest.navigation
 
 import com.example.core.di.AppScope
 import com.github.terrakok.cicerone.Cicerone
