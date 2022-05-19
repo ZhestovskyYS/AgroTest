@@ -12,4 +12,8 @@ class HomeViewModel @Inject constructor(
     fun navigateToWeightsScreen() {
         router.navigateTo(Screens.weights())
     }
+
+    fun navigateToReportsScreen() {
+        router.navigateTo(Screens.reports())
+    }
 }

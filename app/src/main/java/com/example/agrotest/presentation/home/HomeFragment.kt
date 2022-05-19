@@ -22,5 +22,8 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
         binding.weightsButton.setOnClickListener {
             viewModel.navigateToWeightsScreen()
         }
+        binding.reportsButton.setOnClickListener {
+            viewModel.navigateToReportsScreen()
+        }
     }
 }
