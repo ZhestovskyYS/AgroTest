@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/tabbar_view"
+        layout="@layout/l_tabbar_layout" />
+
     <WebView
         android:id="@+id/grid_web_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tabbar_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/tabbar_view"
+        layout="@layout/l_tabbar_layout" />
+
     <Button
         android:id="@+id/weights_button"
         style="@style/Button.Default.Enabled"
@@ -16,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/reports_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tabbar_view" />
 
     <Button
         android:id="@+id/reports_button"
@@ -29,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/settings_button"
         app:layout_constraintStart_toEndOf="@id/weights_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tabbar_view" />
 
     <Button
         android:id="@+id/settings_button"
@@ -42,6 +46,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/reports_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tabbar_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
