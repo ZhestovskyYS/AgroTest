@@ -4,16 +4,16 @@
         <shape>
             <corners android:radius="24dp" />
             <gradient
-                android:endColor="#2B83F5"
+                android:endColor="@color/blue"
                 android:gradientRadius="300dp"
-                android:startColor="#59BDF8"
+                android:startColor="@color/light_blue"
                 android:type="radial" />
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape>
             <corners android:radius="100dp" />
-            <solid android:color="#2B83F5" />
+            <solid android:color="@color/blue" />
         </shape>
     </item>
 </selector>
