@@ -1,4 +1,4 @@
-package com.example.agrotest.activity.main
+package com.example.agrotest.presentation.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -24,11 +24,17 @@ class MainActivity : DaggerAppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState != null) return
         viewModel.navigateToStartScreen()
     }
 
     override fun onResumeFragments() {
         super.onResumeFragments()
         navigatorHolder.setNavigator(navigator)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        navigatorHolder.removeNavigator()
     }
 }

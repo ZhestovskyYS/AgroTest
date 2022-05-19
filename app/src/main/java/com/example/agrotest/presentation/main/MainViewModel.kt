@@ -1,6 +1,7 @@
-package com.example.agrotest.activity.main
+package com.example.agrotest.presentation.main
 
 import androidx.lifecycle.ViewModel
+import com.example.agrotest.navigation.Screens
 import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
@@ -9,6 +10,6 @@ class MainViewModel @Inject constructor(
 ): ViewModel() {
 
     fun navigateToStartScreen() {
-        // TODO: Route to start screen
+        router.newRootChain(Screens.home())
     }
 }
