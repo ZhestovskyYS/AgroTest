@@ -1,8 +1,8 @@
 package com.example.agrotest.di
 
 import com.example.agrotest.App
+import com.example.agrotest.navigation.NavigationModule
 import com.example.core.di.AppScope
-import com.example.navigation.NavigationModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
