@@ -5,4 +5,8 @@
     <string name="delta_weight">Привес</string>
     <string name="animal">Особь</string>
     <string name="reports">Отчеты</string>
+    <string name="weighting">Взвешивание</string>
+    <string name="scales">Весы</string>
+    <string name="history">История</string>
+    <string name="next_weight">Следующий вес</string>
 </resources>

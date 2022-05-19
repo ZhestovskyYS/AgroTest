@@ -10,4 +10,12 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="Button.Oval.Enabled"
+        parent="android:Widget.Button">
+        <item name="android:background">@drawable/d_history_button_background</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
