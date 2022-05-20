@@ -2,7 +2,7 @@ package com.example.agrotest.presentation.reports
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.entity.NetworkResult
+import com.example.entity.RepositoryResult
 import com.example.entity.TableRowData
 import com.example.usecase.GetTableDataUseCase
 import com.github.terrakok.cicerone.Router
@@ -18,17 +18,17 @@ class ReportsViewModel @Inject constructor(
     private val getTableDataUseCase: GetTableDataUseCase
 ): ViewModel() {
 
-    private val _tableData = MutableStateFlow<NetworkResult<List<TableRowData>>>(NetworkResult.Initial())
-    val tableData: StateFlow<NetworkResult<List<TableRowData>>> get() = _tableData
+    private val _tableData = MutableStateFlow<RepositoryResult<List<TableRowData>>>(RepositoryResult.Initial())
+    val tableData: StateFlow<RepositoryResult<List<TableRowData>>> get() = _tableData
 
     fun getTableData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                _tableData.value = NetworkResult.Loading()
+                _tableData.value = RepositoryResult.Loading()
                 val result = getTableDataUseCase()
-                _tableData.value = NetworkResult.Success(result)
+                _tableData.value = RepositoryResult.Success(result)
             } catch (e: Exception) {
-                _tableData.value = NetworkResult.Error(e.localizedMessage)
+                _tableData.value = RepositoryResult.Error(e.localizedMessage)
             }
         }
     }

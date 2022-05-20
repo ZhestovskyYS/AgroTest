@@ -10,6 +10,8 @@ import com.example.agrotest.presentation.settings.SettingsModule
 import com.example.agrotest.presentation.weights.WeightsFragment
 import com.example.agrotest.presentation.weights.WeightsModule
 import com.example.agrotest.presentation.weights.WeightsViewModel
+import com.example.agrotest.presentation.weightshistory.WeightsHistoryFragment
+import com.example.agrotest.presentation.weightshistory.WeightsHistoryModule
 import com.example.core.di.ViewModelKey
 import dagger.Binds
 import dagger.Module
@@ -35,4 +37,7 @@ interface MainActivityModule {
 
     @ContributesAndroidInjector(modules = [SettingsModule::class])
     fun contributeToSettingsScreen(): SettingsFragment
+
+    @ContributesAndroidInjector(modules = [WeightsHistoryModule::class])
+    fun contributeToWeightsHistoryScreen(): WeightsHistoryFragment
 }
