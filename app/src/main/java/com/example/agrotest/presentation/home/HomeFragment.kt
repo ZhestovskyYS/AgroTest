@@ -19,11 +19,21 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tabbarView.apply {
+            title.text = getString(R.string.home_screen)
+        }
+        bindButtons()
+    }
+
+    private fun bindButtons() {
         binding.weightsButton.setOnClickListener {
             viewModel.navigateToWeightsScreen()
         }
         binding.reportsButton.setOnClickListener {
             viewModel.navigateToReportsScreen()
+        }
+        binding.settingsButton.setOnClickListener {
+            viewModel.navigateToSettingsScreen()
         }
     }
 }

@@ -9,4 +9,10 @@
     <string name="scales">Весы</string>
     <string name="history">История</string>
     <string name="next_weight">Следующий вес</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="date_time">Дата/Время</string>
+    <string name="wi_fi">Wi-Fi</string>
+    <string name="power">Питание</string>
+    <string name="settings">Настройки</string>
+    <string name="home_screen">Меню</string>
 </resources>
