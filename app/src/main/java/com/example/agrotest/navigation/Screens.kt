@@ -2,6 +2,7 @@ package com.example.agrotest.navigation
 
 import com.example.agrotest.presentation.home.HomeFragment
 import com.example.agrotest.presentation.reports.ReportsFragment
+import com.example.agrotest.presentation.settings.SettingsFragment
 import com.example.agrotest.presentation.weights.WeightsFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
@@ -12,4 +13,6 @@ object Screens {
     fun weights() = FragmentScreen { WeightsFragment() }
 
     fun reports() = FragmentScreen { ReportsFragment() }
+
+    fun settings() = FragmentScreen { SettingsFragment() }
 }

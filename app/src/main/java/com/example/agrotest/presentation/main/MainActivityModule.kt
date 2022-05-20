@@ -5,6 +5,8 @@ import com.example.agrotest.presentation.home.HomeFragment
 import com.example.agrotest.presentation.home.HomeModule
 import com.example.agrotest.presentation.reports.ReportsFragment
 import com.example.agrotest.presentation.reports.ReportsModule
+import com.example.agrotest.presentation.settings.SettingsFragment
+import com.example.agrotest.presentation.settings.SettingsModule
 import com.example.agrotest.presentation.weights.WeightsFragment
 import com.example.agrotest.presentation.weights.WeightsModule
 import com.example.agrotest.presentation.weights.WeightsViewModel
@@ -30,4 +32,7 @@ interface MainActivityModule {
 
     @ContributesAndroidInjector(modules = [ReportsModule::class])
     fun contributeToReportsScreen(): ReportsFragment
+
+    @ContributesAndroidInjector(modules = [SettingsModule::class])
+    fun contributeToSettingsScreen(): SettingsFragment
 }
