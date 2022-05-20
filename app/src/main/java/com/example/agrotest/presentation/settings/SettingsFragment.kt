@@ -2,6 +2,7 @@ package com.example.agrotest.presentation.settings
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.agrotest.R
@@ -44,6 +45,7 @@ class SettingsFragment : DaggerFragment(R.layout.fragment_settings) {
     private fun bindTabBar() {
         binding.tabbarView.apply {
             title.text = getString(R.string.settings)
+            backArrowLayout.isVisible = true
             backArrowLayout.setOnClickListener {
                 viewModel.navigateBack()
             }

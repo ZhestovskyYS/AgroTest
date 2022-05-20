@@ -15,4 +15,8 @@
     <string name="power">Питание</string>
     <string name="settings">Настройки</string>
     <string name="home_screen">Меню</string>
+    <string name="scaling_date">Дата взвешивания</string>
+    <string name="weight">Вес</string>
+    <string name="diagram">График</string>
+    <string name="weights_history">История взвешиваний</string>
 </resources>

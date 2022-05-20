@@ -11,7 +11,7 @@ import com.example.agrotest.databinding.FragmentWeightsBinding
 import com.example.core.di.ViewModelFactory
 import com.example.core.ext.launchWhenCreated
 import com.example.core.ext.shortToast
-import com.example.entity.NetworkResult
+import com.example.entity.RepositoryResult
 import com.example.entity.WeightsData
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -35,10 +35,10 @@ class WeightsFragment : DaggerFragment(R.layout.fragment_weights) {
     private fun observeWeightsData() {
         viewModel.weightsData.launchWhenCreated(lifecycleScope) {
             when (it) {
-                is NetworkResult.Initial -> Unit
-                is NetworkResult.Loading -> onLoading()
-                is NetworkResult.Error -> onError(it.message)
-                is NetworkResult.Success -> onSuccess(it.data)
+                is RepositoryResult.Initial -> Unit
+                is RepositoryResult.Loading -> onLoading()
+                is RepositoryResult.Error -> onError(it.message)
+                is RepositoryResult.Success -> onSuccess(it.data)
             }
         }
     }
@@ -74,8 +74,7 @@ class WeightsFragment : DaggerFragment(R.layout.fragment_weights) {
         binding.nextWeight.text = data.nextWeight
 
         binding.historyButton.setOnClickListener {
-            viewModel.navigateToWeightsHistory()
-            shortToast("Переход к истории взвешиваний").show()
+            viewModel.navigateToWeightsHistory(data.rfid)
         }
     }
 

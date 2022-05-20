@@ -2,11 +2,12 @@ package com.example.agrotest.presentation.weights
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.entity.NetworkResult
+import com.example.agrotest.navigation.Screens
+import com.example.entity.RepositoryResult
 import com.example.entity.WeightsData
-import com.example.usecase.GetTableDataUseCase
 import com.example.usecase.GetWeightsDataUseCase
 import com.github.terrakok.cicerone.Router
+import com.github.terrakok.cicerone.Screen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,17 +20,17 @@ class WeightsViewModel @Inject constructor(
     private val getWeightsDataUseCase: GetWeightsDataUseCase
 ) : ViewModel() {
 
-    private val _weightsData = MutableStateFlow<NetworkResult<WeightsData>>(NetworkResult.Initial())
-    val weightsData: StateFlow<NetworkResult<WeightsData>> get() = _weightsData
+    private val _weightsData = MutableStateFlow<RepositoryResult<WeightsData>>(RepositoryResult.Initial())
+    val weightsData: StateFlow<RepositoryResult<WeightsData>> get() = _weightsData
 
     fun getWeightsData() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                _weightsData.value = NetworkResult.Loading()
+                _weightsData.value = RepositoryResult.Loading()
                 val result = getWeightsDataUseCase()
-                _weightsData.value = NetworkResult.Success(result)
+                _weightsData.value = RepositoryResult.Success(result)
             } catch (e: Exception) {
-                _weightsData.value = NetworkResult.Error(e.localizedMessage)
+                _weightsData.value = RepositoryResult.Error(e.localizedMessage)
             }
         }
     }
@@ -38,7 +39,7 @@ class WeightsViewModel @Inject constructor(
         router.exit()
     }
 
-    fun navigateToWeightsHistory() {
-        //TODO("Not yet implemented")
+    fun navigateToWeightsHistory(id: String) {
+        router.navigateTo(Screens.weightsHistory(id))
     }
 }

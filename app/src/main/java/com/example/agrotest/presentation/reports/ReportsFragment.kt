@@ -2,8 +2,6 @@ package com.example.agrotest.presentation.reports
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -14,7 +12,7 @@ import com.example.agrotest.databinding.FragmentReportsBinding
 import com.example.core.di.ViewModelFactory
 import com.example.core.ext.launchWhenCreated
 import com.example.core.ext.shortToast
-import com.example.entity.NetworkResult
+import com.example.entity.RepositoryResult
 import com.example.entity.TableRowData
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -54,10 +52,10 @@ class ReportsFragment : DaggerFragment(R.layout.fragment_reports) {
     private fun observeTableData() {
         viewModel.tableData.launchWhenCreated(lifecycleScope) {
             when (it) {
-                is NetworkResult.Initial -> Unit
-                is NetworkResult.Loading -> onLoading()
-                is NetworkResult.Error -> onError(it.message)
-                is NetworkResult.Success -> onSuccess(it.data)
+                is RepositoryResult.Initial -> Unit
+                is RepositoryResult.Loading -> onLoading()
+                is RepositoryResult.Error -> onError(it.message)
+                is RepositoryResult.Success -> onSuccess(it.data)
             }
         }
     }

@@ -3,7 +3,7 @@ package com.example.agrotest.presentation.reports
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agrotest.databinding.ItemTableRowBinding
+import com.example.agrotest.databinding.ItemTableRowReportBinding
 import com.example.entity.TableRowData
 
 class ReportsAdapter(
@@ -13,7 +13,7 @@ class ReportsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ItemViewHolder(
-            ItemTableRowBinding.inflate(
+            ItemTableRowReportBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -27,7 +27,7 @@ class ReportsAdapter(
     override fun getItemCount() = items.size
 
     inner class ItemViewHolder(
-        private val binding: ItemTableRowBinding
+        private val binding: ItemTableRowReportBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: TableRowData) {
